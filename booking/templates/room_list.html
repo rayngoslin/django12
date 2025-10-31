@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Room List</title>
+</head>
+<body>
+    <h1>Rooms</h1>
+    <ul>
+        {% for room in rooms %}
+            <li>Room {{ room.number }} (Capacity: {{ room.capacity }})</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'booking_list' %}">Back to bookings</a>
+</body>
+</html>
