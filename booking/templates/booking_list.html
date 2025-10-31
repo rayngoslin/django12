@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bookings</title>
+</head>
+<body>
+    {% extends 'base.html' %}
+    {% block content %}
+    <h1 class="mb-4">All Bookings</h1>
+    <ul class="list-group">
+        {% for booking in bookings %}
+            <li class="list-group-item">
+                <strong>{{ booking.customer.name }}</strong> booked <strong>{{ booking.room.number }}</strong>
+                from <span class="badge bg-primary">{{ booking.check_in }}</span>
+                to <span class="badge bg-success">{{ booking.check_out }}</span>
+            </li>
+        {% endfor %}
+    </ul>
+    {% endblock %}
+</body>
+</html>
